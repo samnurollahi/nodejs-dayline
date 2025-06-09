@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="google-site-verification"
+      content="bYbb3wKhX1RMFGTCR2e_TT1emDsZoQMrTcBtJSabx78"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.rtl.min.css"
+      integrity="sha384-DOXMLfHhQkvFFp+rWTZwVlPVqdIhpDVYT9csOnHSgWQWPX0v5MCGtjCJbY6ERspU"
+      crossorigin="anonymous"
+    />
+
+    <!-- main style -->
+    <link rel="stylesheet" href="/styles/style.css" />
+
+    <title>دی لاین | تیتر خبرهای امروز ایران و جهان</title>
+  </head>
+  <body>
+    <section class="mb-3">
+      <div
+        class="container-fluid text-center border-bottom border-1 border-dark title-site"
+      >
+        <img src="./logo.png" alt="" style="width: 243px" />
+        <p>تیتر خبرهای امروز ایران و جهان</p>
+        <a href="./day_line.apk" download> دانلود اپلیکیشن اندروید </a>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="row justify-content-center" id="container-news">
+          <% if(bannerOne) {%>
+          <a href="<%= bannerOne.url %>" class="text-center" target="_blank">
+            <img src="/uploads/<%= bannerOne.img %>" />
+          </a>
+          <% } %> <% for(item of news) {%>
+          <div
+            class="col-12 col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center"
+          >
+            <div style="width: 90%" class="box-news border-top border-bottom">
+              <div class="box-img">
+                <img src="<%= item.img %>" alt="" />
+              </div>
+              <a
+                href="<%= item.urlNews %>"
+                class="text-decoration-none"
+                target="_blank"
+              >
+                <%= item.title %>
+              </a>
+              <div class="mt-2 data-news">
+                <p class="m-0">
+                  <img
+                    src="./logo/<%=item.manbagIcon%>.ico"
+                    alt=""
+                    style="width: 10px"
+                  />
+                  <%= item.manbagName %> . <%= formatDate(item.createAr) %>
+                </p>
+              </div>
+            </div>
+          </div>
+          <% } %> <% if(bannerTow) {%>
+          <a href="<%= bannerTow.url %>" class="text-center" target="_blank">
+            <img src="/uploads/<%= bannerTow.img %>" />
+          </a>
+          <% } %>
+        </div>
+      </div>
+    </section>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- moment -->
+    <script src="./script/jalali-moment.browser.js"></script>
+    <!-- main script -->
+    <script src="./script/scriptPageIndex.js"></script>
+    <!-- visited -->
+    <script src="./script/sendDataUser.js"></script>
+  </body>
+</html>

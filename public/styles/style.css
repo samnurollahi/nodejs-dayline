@@ -1,0 +1,44 @@
+/* main font */
+@font-face {
+    font-family: vazir;
+    src: url(../fonts/Vazir-Medium.woff2);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: vazir;
+}
+.title-site {
+    background-color: #d1ddf5;
+}
+.box-news {
+    transition: .5s;
+    position: relative !important;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: #d1ddf5 0px 3px 8px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+.box-news .box-img {
+    width: 100%;
+}
+.box-news .box-img img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.box-news a{
+    color: #000;
+}
+.box-news .data-news p{
+    font-weight: 400;
+    font-size: 12px;
+}
+/* .box-news:hover {
+    transition: .5s;
+    box-shadow: #d1ddf5 0px 10px 10px 4px;
+} */
